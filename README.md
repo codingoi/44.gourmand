@@ -19,3 +19,6 @@ The purpose of the <Business /> component is to represent how a business (a rest
 
 #### BusinessList
 The point of the <BusinessList /> component is to simulate what a returned list of businesses would look like in Gourmand (after querying the Yelp API, for example). 
+
+#### SearchBar
+The search bar will communicate with the Yelp API.
