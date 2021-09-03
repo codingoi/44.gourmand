@@ -16,3 +16,6 @@ In total, there will be four parts to this project:
 ### Components
 #### Business
 The purpose of the <Business /> component is to represent how a business (a restaurant) in Gourmand will be formatted and styled. It will be updated dynamically using the Yelp API.
+
+#### BusinessList
+The point of the <BusinessList /> component is to simulate what a returned list of businesses would look like in Gourmand (after querying the Yelp API, for example). 
