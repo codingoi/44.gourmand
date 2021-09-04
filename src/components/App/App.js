@@ -1,6 +1,3 @@
-//REPLACE LOGO
-import logo from '../../logo.svg';
-
 //Import React Libray
 import React from 'react';
 
@@ -25,14 +22,25 @@ const business = {
   reviewCount: 90
 }
 
-const businessArray = [business, business, business, business, business, business];
+const businessArray = [
+  business, 
+  business, 
+  business, 
+  business, 
+  business, 
+  business
+];
 
 export class App extends React.Component {
+  searchYelp(term, location, sortBy) {
+    console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
+  }
+
   render() {
     return (
       <div className="App">
         <h1>gourmand</h1>
-        <SearchBar />
+        <SearchBar searchYelp={this.searchYelp}/>
         <BusinessList business={businessArray} />
       </div>
     );
