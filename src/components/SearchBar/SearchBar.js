@@ -48,7 +48,8 @@ class SearchBar extends React.Component {
 
     //
     handleSearch(event) {
-        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy)
+        const { term, location, sortBy } = this.state;
+        this.props.searchYelp(term, location, sortBy);
         event.preventDefault(); // Prevents the <a> tag action from triggering causing a rerender
     }
 
@@ -66,17 +67,21 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="SearchBar">
-                <div className="SearchBar-sort-options">
-                    <ul>
-                        {this.renderSortByOptions()}
-                    </ul>
-                </div>
-                <div className="SearchBar-fields">
-                    <input placeholder="Search Businesses" onChange={this.handleTermChange} />
-                    <input placeholder="Where?" onChange={this.handleLocationChange} />
-                </div>
-                <div className="SearchBar-submit">
-                    <a href="#" onClick={this.handleSearch}>Let's Go</a>
+                <h2 className="SearchBar-heading">Explore</h2>
+                <div className="SearchBar-container">
+                    <div className="SearchBar-sort-options">
+                        <ul>
+                            {this.renderSortByOptions()}
+                        </ul>
+                    </div>
+                    <h3 style={{ textAlign: 'center', display:'block' }}>Your Delicacy of Choice?</h3>
+                    <div className="SearchBar-fields">
+                        <input placeholder="Search" onChange={this.handleTermChange} required />
+                        <input placeholder="Where?" onChange={this.handleLocationChange} required />
+                    </div>
+                    <div className="SearchBar-submit">
+                        <a href="" onClick={this.handleSearch}>Let's Go</a>
+                    </div>
                 </div>
             </div>
         )
