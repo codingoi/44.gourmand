@@ -46,7 +46,7 @@ class SearchBar extends React.Component {
         this.setState({ location: event.target.value });
     }
 
-    //
+    //Sends term/location/option back to App to be utilized in the API Call
     handleSearch(event) {
         const { term, location, sortBy } = this.state;
         this.props.searchYelp(term, location, sortBy);
