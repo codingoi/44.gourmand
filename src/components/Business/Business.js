@@ -15,14 +15,14 @@ class Business extends React.Component {
                 </div>
 
                 <div className="overlay overlay-left">
-                <div className="Business-reviews">
-                            
-                            <h3 className="rating">{this.props.business.rating}
-                                <sub className="material-icons">
-                                    star
-                                </sub>
-                            </h3>
-                        </div>
+                    <div className="Business-reviews">
+
+                        <h3 className="rating">{this.props.business.rating}
+                            <sub className="material-icons">
+                                star
+                            </sub>
+                        </h3>
+                    </div>
                     <div className="Business-information">
                         <div className="Business-address">
                             {this.props.business.location.display_address.map((detail, i) => {
@@ -33,19 +33,19 @@ class Business extends React.Component {
                             <p>{this.props.business.display_phone}</p>
                         </div>
 
-                        
+
                     </div>
-                    
+
                 </div>
                 <h2>{this.props.business.name}</h2>
                 <div className="Business-categories">
                     {this.props.business.categories[0].title}
                     <sup>.</sup>
                     <span>
-                    {this.props.business.rating}
-                    <sub className="material-icons">
-                                    star
-                                </sub>
+                        {this.props.business.rating}
+                        <sub className="material-icons">
+                            star
+                        </sub>
                     </span>
                 </div>
             </div>
