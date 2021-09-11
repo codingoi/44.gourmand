@@ -1,0 +1,16 @@
+.Gallery {
+    width: 95%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0 2rem 2rem 2rem;
+    display: inline-flex;
+    flex-wrap:nowrap;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    
+}
+
+.Gallery::-webkit-scrollbar {
+    display: none;
+  }
+  
