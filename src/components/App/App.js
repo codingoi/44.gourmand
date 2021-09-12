@@ -14,9 +14,6 @@ import Gallery from '../Gallery/Gallery'
 //Import Yelp API Call function which will return a business object
 import Yelp from '../../util/Yelp';
 
-//Import Geolocation function which will locate the device and feed information to the TopOption component
-import Geolocation from '../../util/Geolocation';
-
 export class App extends React.Component {
   constructor(props) {
     super(props);
@@ -80,3 +77,4 @@ export class App extends React.Component {
   }
 }
 
+export default App;
