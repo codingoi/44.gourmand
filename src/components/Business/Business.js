@@ -32,14 +32,11 @@ class Business extends React.Component {
                             <p>{this.props.business.zipCode}</p>
                             <p>{this.props.business.display_phone}</p>
                         </div>
-
-
                     </div>
-
                 </div>
-                <h2>{this.props.business.name}</h2>
+                <h3 className="Business-name">{this.props.business.name}</h3>
                 <div className="Business-categories">
-                    {this.props.business.categories[0].title}
+                    <p>{this.props.business.categories[0].title}</p>
                     <sup>.</sup>
                     <span>
                         {this.props.business.rating}
