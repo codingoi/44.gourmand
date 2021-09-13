@@ -1,5 +1,5 @@
 # Gourmand
-## A Yelp-like clone
+## Search Restaurants Using the Yelp API
 
 ### Functional Overview
 - As a user, I should be able to search for restaurants
