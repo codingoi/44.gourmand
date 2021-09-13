@@ -14,7 +14,11 @@ import Gallery from '../Gallery/Gallery'
 //Import Yelp API Call function which will return a business object
 import Yelp from '../../util/Yelp';
 
-export class App extends React.Component {
+//Import Geolocation API call to discover user device location
+import Geolocation from '../../util/Geolocation';
+
+
+class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -30,22 +34,27 @@ export class App extends React.Component {
     this.yelpRecommendations = this.yelpRecommendations.bind(this);
   }
 
+  
   componentDidMount() {
     this.getLocation();
   }
 
 
-
-  async getLocation() {
+  //Gathers the longitude and latitude of the user's device inorder to render the popular restaurant list
+   getLocation() {
     if ('geolocation' in navigator) {
-      const response = await navigator.geolocation.getCurrentPosition((position) => {
+       navigator.geolocation.getCurrentPosition((position) => {
         this.setState({ location: position.coords })
+      }, (error) => {
+        this.setState({ location: { latitude: 40.7666688, longitude: -73.990144 } })
       })
     } else {
-      this.setState({ location: { latitude: 40.7666688, longitude: -73.990144 } })
+        this.setState({ location: { latitude: 40.7666688, longitude: -73.990144 } })
     }
   }
 
+  
+  //Makes an API request using the location gathered by the getLocation() function to render the popular restaurant list
   yelpRecommendations(term, location, sortBy) {
     Yelp.search(term, location, sortBy)
       .then((businesses) => {
@@ -54,7 +63,7 @@ export class App extends React.Component {
   }
 
 
-
+//Makes the API request using the user's inputs 
   searchYelp(term, location, sortBy) {
     Yelp.search(term, location, sortBy)
       .then((businesses) => {
@@ -76,5 +85,6 @@ export class App extends React.Component {
     );
   }
 }
+
 
 export default App;
